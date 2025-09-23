@@ -4,7 +4,7 @@ import { FormControl, FormItem, FormLabel, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
 import { Control, Controller, FieldValue, Path } from "react-hook-form";
 
-interface FormFieldProps<T extends FieldValues> {
+interface FormFieldProps<T extends FieldValue> {
   control: Control<T>;
   name: Path<T>;
   lable: string;
@@ -15,7 +15,7 @@ interface FormFieldProps<T extends FieldValues> {
 const FormField = ({
   control,
   name,
-  label,
+  lable,
   placeholder,
   type = "text",
 }: FormFieldProps<T>) => (
@@ -24,7 +24,7 @@ const FormField = ({
     control={control}
     render={({ field }) => (
       <FormItem>
-        <FormLabel>{label}</FormLabel>
+        <FormLabel>{lable}</FormLabel>
         <FormControl>
           <Input
             className="input"
